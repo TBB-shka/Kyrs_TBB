@@ -80,21 +80,7 @@ def vidod(request):
         }
     )
 
-def Table():
-    a=1
-    while a<10:
-        a=a+1
-        b=str(a)
-        c = Product(name='Name '+b, price='Price '+b,link='Link '+b)
-        c.save()
-        print(c.name + ' ' + c.price+' '+c.link)
-    print('Ааааааааааа, чеееерт ')
-    print(' ')
-    for p in Product.objects.raw('SELECT * FROM app_product'):
-        print(p)
-   
-    # al = Product.obects.all()
-   # print(al)
+
 
 
 def search(request):    
