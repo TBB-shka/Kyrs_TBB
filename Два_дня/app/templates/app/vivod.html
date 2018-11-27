@@ -1,0 +1,135 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<div class="container">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    
+    
+    <style>
+        .container {
+  width: 100%;
+  max-width: 1024px; /*максимальная ширина может иметь другое значение*/
+  padding: 0 15px;
+  margin: 0 auto;
+}
+        .magazin {
+            font-size:20px;
+            float: left;
+            width: 50%;
+        }
+        .poisk {
+            
+            font-size: 20px;
+        }
+        .sort{
+            width: 50%;
+        	float:right;
+            margin-bottom: 15px;
+        }
+        .sm_sort {
+            <!--width: 50%;-->
+            font-size: 20px;
+            <!--float:right;-->
+        }
+        .recover {
+            left: 0; bottom: 0;
+            font-size:15px;
+        }
+		.poisk{
+       
+        }
+        .bt_ps{
+        	margin-bottom: 15px;
+            display: inline-block;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+    </div>
+    
+</head>
+<body>
+<div class="container">
+    Датаааа
+   <div class="all">
+    <form action="search" method="get">
+       <!-- <textarea name="q" cols="40" rows="3" style="font-size: 50px;"></textarea>-->
+       <div class="form_all">
+        <div class="poisk">
+       <input  type="text" maxlength="30" name="q" size="50" value="{{ current_name }}" pattern="^[a-zA-Z]+$+^[А-Яа-яЁё\s]+$"/>
+       
+       <div class="bt_ps">
+           <input type="submit" value="Поиск" class="btn btn-pre btn-lg" aria-pressed="true" />
+       </div>
+            </div>
+        
+       <div class="magazin ">
+           Магазины:
+           </p>
+           <label > Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+        </div>
+       
+       
+       <div class="sort">
+           <h2>Сортировать по цене:</h2>
+           <div class="sm_sort"> 
+               <label>
+                <input type="radio" name="t" id="y" value="yes" />Сортировать по убыванию цены
+                </label><br/>
+                <label>
+                <input type="radio" name="t" id="n" value="no" /> сортировать по возрастанию цены
+                </label>
+            </div>
+           </p>
+           <div class="ogr_price">
+               <label>
+                   Включить ограничение цены :
+                   <input type="checkbox" name="ogr_price">
+               </label>
+               <div class="price_ot_do">
+                    <label>
+                   Цена от:
+                   <input type="text" name="price_ot" pattern="[0-9]{0,15}">
+               </label></p>
+                   <label>
+                   Цена до:
+                   <input type="text" name="price_dо" pattern="[0-9]{0,15}">
+               </label
+                    </div>
+          </div>     
+                </div>
+</div>
+    </form>
+     
+
+   <div class="recover">
+       
+        <form action="recover" method="get">
+            <label>Восстановить поиск
+            <input type="text" value="{{ current_name }}" /> <!--pattern-->  
+            </label>
+            <input type="submit" value="Восстановить" class="btn btn-default btn-sm aria-pressed="tru" />
+       </form>
+        </div>
+   </div>
+ </div>
+</body>
+</html>

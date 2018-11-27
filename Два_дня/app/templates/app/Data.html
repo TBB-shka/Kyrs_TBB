@@ -1,0 +1,200 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    
+    
+    <style>
+        .container {
+  width: 100%;
+  max-width: 1024px; /*максимальная ширина может иметь другое значение*/
+  padding: 0 15px;
+  margin: 0 auto;
+}
+        .container{
+        	margin-top:10px;
+        }
+        .form_all {
+            margin-top: 10px;
+        }
+        .magazin {
+            font-family: "Times New Roman", Georgia, Serif;
+            
+           /* border: 1px solid #000;
+            border-radius: 10px;*/
+            font-size:20px;
+            float: left;
+            width: 40%;
+        }
+        .param_sort{
+        	font-size:20px;
+        }
+        .poisk {
+            
+            font-size: 15px;
+        }
+        .sort{
+            font-style: normal;
+            width: 50%;
+        	float:right;
+            margin-bottom: 15px;
+        }
+        .sm_sort {
+            <!--width: 50%;-->
+            font-size: 20px;
+            <!--float:right;-->
+        }
+        .recover {
+           /*   position: fixed; /* Фиксированное положение */
+    		left: 0; bottom: 0;
+            margin-top: 10%;
+            float: left;
+            width: 40%;
+               
+            font-size:15px;
+        }
+		.poisk{
+       
+        }
+        .bt_ps{
+        	margin-bottom: 15px;
+            display: inline-block;
+        }
+        .param_sort {
+            width: 50%;
+        	float:right;
+           
+        }
+        footer {
+        
+        }
+        label {
+            font-weight: normal;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+    </div>
+    
+</head>
+<body>  
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://directory.tusur.ru/people/3607" class="navbar-brand">Ответственный</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/shabl"> Shablik</a></li>
+                    <li><a href="{% url 'home' %}">Начальная страница</a></li>
+                    <li><a href="/data">Страница поиска</a></li>
+                    <li><a href="{% url 'about' %}">О проекте</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+<div class="container">
+    <form action="search" method="get">
+       <!-- <textarea name="q" cols="40" rows="3" style="font-size: 50px;"></textarea>-->
+       <div class="form_all">
+        <div class="poisk">
+            <label> Введите желаемый товар
+       <input  type="text" maxlength="30" name="q" size="50" value="{{ current_name }}" pattern="^[a-zA-Z]+$+^[А-Яа-яЁё\s]+$" title="Допускаются только буквы русского и Английского алфавита."/>
+       </label>
+       <div class="bt_ps">
+           <input type="submit" value="Поиск" class="btn btn-default btn-sm" aria-pressed="true" />
+       </div>
+            </div>
+        
+       <div class="magazin ">
+           Магазины:
+           </p>
+           <label > Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+           <label> Lamoda
+           <input type="checkbox" name="lamoda" checked />   
+           </label><br/>
+        </div>
+       
+       <div class="param_sort" >
+                  Параметры поиска
+          
+           </div>
+
+       <div class="sort">
+                      </p>
+           Сортировать по цене:
+           <div class="sm_sort"> 
+                <label>
+                <input type="radio" name="t" id="y" value="yes" /> Сортировать по убыванию цены
+                </label><br/>
+                 <label>
+                <input type="radio" name="t" id="n" value="no" /> Cортировать по возрастанию цены
+                </label>
+            </div>
+           </p>
+           <div class="ogr_price">
+               <label >
+                   Включить ограничение цены :
+                   <input type="checkbox" name="ogr_price">
+                 
+               </label>
+               <div class="price_ot_do">
+                    <label>
+                   Цена от:
+                   <input type="text" name="price_ot" size="10" pattern="[0-9]{0,15}"> руб.
+               </label><br/>
+                   <label>
+                   Цена до:
+                   <input type="text" name="price_dо" size="10" pattern="[0-9]{0,15}"> руб.
+               </label>
+                    </div>
+          </div>     
+               <div class="recover">
+       
+        <form action="recover" method="get">
+            <label title="Введите код поиска, для восстановления результатов прошлого поиска">Восстановить поиск
+                </p>
+            <input type="text" value="{{ current_name }}" /> <!--pattern-->  
+            </label>
+            <input type="submit" value="Восстановить" class="btn btn-default btn-sm aria-pressed="tru" />
+       </form>
+        </div>
+                
+                                                                                                      </div>
+</div>
+    </form>
+    
+</div>
+    <hr />
+    <footer>
+            <p>&copy; 2018 - My Django Application</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+
