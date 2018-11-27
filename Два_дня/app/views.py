@@ -88,7 +88,7 @@ def Table():
         c = Product(name='Name '+b, price='Price '+b,link='Link '+b)
         c.save()
         print(c.name + ' ' + c.price+' '+c.link)
-    print('все !!! ')
+    print('Ааааааааааа, чеееерт ')
     print(' ')
     for p in Product.objects.raw('SELECT * FROM app_product'):
         print(p)
